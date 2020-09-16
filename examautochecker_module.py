@@ -1,6 +1,7 @@
 import os
 from csv import writer
 import io
+import re
 
 def save_student_input(output_dir, student_input):   
     os.chdir(output_dir)
@@ -66,27 +67,23 @@ def check_items(temp_file, ans_key, output_dir, assessment_type, section_output_
     for i in range(5, num_lines+1):
         j = i - 4
         item = all_lines[i - 1]
-        item = item.replace(" ", "")
         if "." in item:
             item_num, item_answer = item.split('.')
-        if ")" in item:
-            item_num, item_answer = item.split(')')
-        item_answer = item_answer[0:1]
+        item_answer = item_answer.strip()
+        item_answer = re.sub(' +', ' ', item_answer)
         item_answer = item_answer.lower()
         answer = answer_lines[j - 1]
-        answer = answer.replace(" ", "")
         if "." in answer:
             answer_num, correct_answer = answer.split('.')
-        if ")" in answer:
-            answer_num, correct_answer = answer.split(')')
-        correct_answer = correct_answer[0:1]
+        correct_answer = correct_answer.strip()
+        correct_answer = re.sub(' +', ' ', correct_answer)
         correct_answer = correct_answer.lower()
         
         if item_answer == correct_answer:
-            comment = "Correct" #u'\u2713' 
+            comment = "Correct" 
             score += 1
         else:
-            comment = "Wrong" #u'\u2718' 
+            comment = "Wrong"  
             mistake += 1
         
         f.write(item_num + ". " + item_answer + " (" + correct_answer + ") " + comment + "\n")
