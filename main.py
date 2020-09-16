@@ -5,7 +5,7 @@ from kivy.uix.label import Label
 from kivy.properties import ObjectProperty
 from kivy.uix.textinput import TextInput
 import os
-import examautochecker-module as ex
+import examautochecker_module as ex
 from android.permissions import request_permissions, Permission
 request_permissions([Permission.READ_EXTERNAL_STORAGE, Permission.WRITE_EXTERNAL_STORAGE])
 from android.storage import primary_external_storage_path
