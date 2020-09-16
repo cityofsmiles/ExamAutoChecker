@@ -1,0 +1,152 @@
+#encoding: utf-8
+#:import Clipboard kivy.core.clipboard.Clipboard
+
+
+
+
+<Manager>:
+
+    ScreenOne:
+        id: screen_one
+        name: 'screen1'
+
+    ScreenTwo:
+        id: screen_two
+        name: 'screen2'
+
+
+<ScreenOne>:
+
+    assessment_type_id: assessment_type_id
+
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+
+        TextInput:
+            id: assessment_type_id
+            size_hint: 1, 0.1
+            multiline: False
+            hint_text: "Enter the assessment type. Example: Quiz#1"
+            focus: True
+            cursor_blink: True
+            input_filter: None
+            readonly: False
+            on_double_tap: 
+                self.text = Clipboard.paste()
+        
+        TextInput:
+            id: anskey_input_id
+            size_hint: 1, 0.8
+            multiline: True
+            hint_text: "Enter the answer key. "
+            focus: True
+            allow_copy: True
+            use_bubble: True
+            use_handles: True
+            text_language: "en_US"
+            cursor_blink: True
+            input_filter: None
+            readonly: False
+            on_double_tap: 
+                self.text = Clipboard.paste()
+
+        GridLayout:
+            cols:3
+            size_hint: 1, 0.1 
+            
+            Button:
+                text: 'Save'
+                size_hint: 0.3, 1
+                on_press: 
+                    root.save_key(anskey_input_id.text)
+                    root.get_assessment_type()
+                    root.manager.current = 'screen2'
+                    
+            Button:
+                text: 'Use Previous'
+                size_hint: 0.3, 1
+                on_press: 
+                    root.get_assessment_type()
+                    root.manager.current = 'screen2'
+                    
+            Button:
+                text: 'Exit'
+                size_hint: 0.3, 1
+                on_release: app.stop()
+                
+<ScreenTwo>:
+    
+    outdir_label_id: outdir_label_id
+    
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+
+        
+        TextInput:
+            id: outdir_label_id
+            size_hint: 1, 0.1
+            multiline: True
+            readonly: True
+            text: ""
+
+        GridLayout:
+            cols:2
+            size_hint: 1, 0.8
+
+            TextInput:
+                id: student_input_id
+                size_hint: 0.5, 1
+                multiline:True
+                hint_text: "Enter the student infos and answers."
+                focus: True
+                allow_copy: True
+                use_bubble: True
+                use_handles: True
+                text_language: "en_US"
+                cursor_blink: True
+                input_filter: None
+                readonly: False
+                on_double_tap: 
+                    self.text = Clipboard.paste()
+
+            TextInput:
+                id: checked_items_id
+                size_hint: 0.5, 1
+                multiline: True
+                hint_text: "Results"
+                allow_copy: True
+                readonly: False
+#            font_name: "dn.ttf"
+
+        GridLayout:
+            cols:4
+            size_hint: 1, 0.1 
+
+            Button:
+                text: 'Back'
+                size_hint: 0.25, 1
+                on_press: root.manager.current = 'screen1'
+
+            Button:
+                text:"Check"
+                size_hint: 0.25, 1
+                on_press:
+                    app.check_now(student_input_id.text)
+                    root.update_values()
+                    
+                
+            Button:
+                text: 'Save'
+                size_hint: 0.25, 1
+                on_press: 
+                    app.save_results()
+                    root.clear_screens()
+                    
+            
+            Button:
+                text:"Exit"
+                size_hint: 0.25, 1
+                on_release: app.stop()
+
