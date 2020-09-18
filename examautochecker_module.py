@@ -23,8 +23,14 @@ def parse_infos(temp_file, output_dir):
     section = section[2:-4]
     section = section.replace(" ", "")
     student_code = str(f.readlines(3))
-    student_code = student_code[2:-4]
     student_code = student_code.replace(" ", "")
+    student_code = student_code.replace("[", "")
+    student_code = student_code.replace("'", "")
+    student_code = student_code.replace(",", "")
+    student_code = student_code.replace("]", "")
+    student_code = student_code.replace('\\', "")
+    student_code = student_code.replace('n', "")
+    student_code = student_code.rstrip()
     return student_code, student_lastname, student_firstname, section
 
 

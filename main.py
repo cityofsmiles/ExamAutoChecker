@@ -22,6 +22,7 @@ class Manager(ScreenManager):
 class ScreenOne(Screen):    
     def save_key(self, answer_key):
         os.chdir(output_dir)
+        answer_key = answer_key.strip()
         file_ans_key = 'answer-key.txt'
         fob = open(file_ans_key,'w')
         fob.write(answer_key)
@@ -29,7 +30,8 @@ class ScreenOne(Screen):
     
     def get_assessment_type(self):
         global assessment_type_str
-        assessment_type_str = self.ids.assessment_type_id.text    
+        assessment_type_str = self.ids.assessment_type_id.text  
+        assessment_type_str = assessment_type_str.replace(" ", "")
         
     
 class ScreenTwo(Screen):
@@ -56,6 +58,7 @@ class ExamAutoChecker(App):
 
     
     def check_now(self, student_input):
+        student_input = student_input.strip()
         assessment_type = assessment_type_str
         file_ans_key = 'answer-key.txt'
         self.checked_items_results, self.temp_file, self.student_code, self.student_lastname, self.section_output_dir, self.output_file, self.student_input, self.score, self.total_items = ex.check_answers(output_dir, assessment_type, file_ans_key, student_input)
