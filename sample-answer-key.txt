@@ -1,0 +1,13 @@
+1. a
+2. B
+3. c
+4. D
+5. E
+6. True
+7. FALSE
+8. TRUE
+9. An apple
+10. (X-Y) 
+
+
+
