@@ -22,7 +22,7 @@ B1                 (Student code. Use B1, B2, etc. for male students and G1, G2,
 2. b   (Don't indent the numbers.) 
 3. c  
 ...  
-The space between the student code and the first answer is required.
+The space between the student code and the first answer is required. Please see the [sample student answer](https://github.com/cityofsmiles/ExamAutoChecker/blob/master/sample-student-answer.txt). 
 
 _Note:_ The answer key should be a simple text file that contains only the correct answers. For example:
 
@@ -32,21 +32,13 @@ _Note:_ The answer key should be a simple text file that contains only the corre
 4. Perfect Square Trinomial
 5. (x-y)
 
+Please see the [sample  answer key](https://github.com/cityofsmiles/ExamAutoChecker/blob/master/sample-answer-key.txt). 
 
 ## Installation
 * For Windows, click [here](https://github.com/cityofsmiles/ExamAutoChecker/raw/assets/ExamAutoChecker.exe) to download the executable file. Just double click the file to launch the app.
 * For Linux, click [here](https://github.com/cityofsmiles/ExamAutoChecker/raw/assets/ExamAutoChecker) to download the executable file. Just double click the file to launch the app.
 * For Android phones with the architecture arm64-v8a, click [here](https://github.com/cityofsmiles/ExamAutoChecker/raw/assets/ExamAutoChecker-0.1-arm64-v8a-debug.apk) to download the apk file. Other architectures will be supported in the future. If you don't know your phone's architecture, you may install the [CPU Info](https://github.com/kamgurgul/cpu-info) app.
 
-## Contact info
-You may contact me directly at cityofsmiles@gmail.com
-
-
-
-
-
-
-
-
-
+## How to report issues
+If you see bugs in the app, please [open a new issue](https://github.com/cityofsmiles/ExamAutoChecker/issues). 
 
