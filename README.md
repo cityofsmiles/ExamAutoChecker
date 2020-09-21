@@ -37,7 +37,7 @@ _Note:_ The answer key should be a simple text file that contains only the corre
 Please see the [sample  answer key](https://github.com/cityofsmiles/ExamAutoChecker/blob/master/sample-answer-key.txt). 
 
 ## Installation
-* For Windows, click [here](https://github.com/cityofsmiles/ExamAutoChecker/raw/assets/ExamAutoChecker.exe) to download the executable file. Just double click the file to launch the app. Windows will warn you that this file can not be trusted and will discourage you to run it. That is normal. Just click OK to run the program.
+* For Windows, click [here](https://github.com/cityofsmiles/ExamAutoChecker/raw/assets/ExamAutoChecker.exe) to download the executable file. Just double click the file to launch the app. Windows will warn you that this file can not be trusted and will discourage you to run it. That is normal. Just click More Info then Run Anyway to run the program.
 * For Linux, click [here](https://github.com/cityofsmiles/ExamAutoChecker/raw/assets/ExamAutoChecker) to download the executable file. Just double click the file to launch the app.
 * For Android phones with the architecture arm64-v8a, click [here](https://github.com/cityofsmiles/ExamAutoChecker/raw/assets/ExamAutoChecker-0.1-arm64-v8a-debug.apk) to download the apk file. Other architectures will be supported in the future. If you don't know your phone's architecture, you may install the [CPU Info](https://github.com/kamgurgul/cpu-info) app.
 
