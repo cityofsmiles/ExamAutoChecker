@@ -1,6 +1,8 @@
 # Exam Auto-Checker App for Teachers
 Automatically check, save, and record student answers obtained from any messaging app.
 
+[pic](https://github.com/cityofsmiles/ExamAutoChecker/blob/assets/autochecker.png)
+
 ## Usage
 1. Create your worksheet, quiz, or test along with the answer key.
 2. Send your worksheet, quiz, or test to your students using any messaging app and let them send you their answers. 
