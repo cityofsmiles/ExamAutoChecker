@@ -5,7 +5,7 @@ import PySimpleGUI as sg
 import os
 import examautochecker_module as ex
 
-sg.theme('Dark Green 5')
+#sg.theme('Dark Green 5')
 
 def get_input():     
     left_col = [[sg.Text('Assessment Type:', size=(16, 1)), sg.InputText(key='ASSESSMENT', size=(33, 1))],

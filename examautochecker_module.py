@@ -43,7 +43,8 @@ def create_output_file(output_dir, student_code, student_lastname, student_first
     f= open(output_file,"w+")
     f.write(student_lastname + ", " + student_firstname + "\n")
     f.write(section + "\n")
-    f.write(student_code + "\n")
+    if student_code[0:1] != "1":
+        f.write(student_code + "\n")
     f.write(assessment_type + "\n\n")
     f.close()
     return section_output_dir, output_file
@@ -65,20 +66,27 @@ def check_items(temp_file, ans_key, output_dir, assessment_type, section_output_
     except FileNotFoundError:
         print("Answer key does not exist!")
     all_lines = file_temp.readlines()
+    blank_line = 0
+    for i in range(0, num_lines):
+        item = all_lines[i]
+        item = item.split()
+        if item == []:
+            blank_line = i
+            break
     answer_lines = answer_file.readlines()
     score = 0
     mistake = 0
     os.chdir(section_output_dir)
     f = io.open(output_file, "a+", encoding='utf8')
-    for i in range(5, num_lines+1):
-        j = i - 4
-        item = all_lines[i - 1]
+    for i in range(blank_line+1, num_lines):
+        j = i - blank_line - 1
+        item = all_lines[i]
         if "." in item:
             item_num, item_answer = item.split('.')
         item_answer = item_answer.strip()
         item_answer = re.sub(' +', ' ', item_answer)
         item_answer = item_answer.lower()
-        answer = answer_lines[j - 1]
+        answer = answer_lines[j]
         if "." in answer:
             answer_num, correct_answer = answer.split('.')
         correct_answer = correct_answer.strip()
@@ -109,7 +117,10 @@ def read_output(section_output_dir, output_file):
 
 def clean_up(temp_file, output_dir, student_code, student_lastname, section_output_dir, output_file, assessment_type, score):
     os.chdir(section_output_dir)
-    new_output_file = student_code + "-" + student_lastname + "-" + str(score) + ".txt"
+    if student_code[0:1] != "1":
+        new_output_file = student_code + "-" + student_lastname + "-" + str(score) + ".txt"
+    else: 
+        new_output_file = student_lastname + "-" + str(score) + ".txt"
     os.rename(output_file, new_output_file) 
     os.chdir(output_dir)
     os.remove(temp_file)
@@ -125,7 +136,7 @@ def append_list_as_row(file_name, list_of_elem):
         csv_writer.writerow(list_of_elem)
 
 
-def record_score(section_output_dir, assessment_type, student_code, score, total_items):
+def record_score(section_output_dir, assessment_type, student_code, student_lastname, score, total_items):
     record_csv = assessment_type + '-Scores.csv'
     os.chdir(section_output_dir)
     try:
@@ -136,7 +147,10 @@ def record_score(section_output_dir, assessment_type, student_code, score, total
         f.close()
     finally:
         f.close()
-    row_contents = [student_code, score]
+    if student_code[0:1] != "1":
+        row_contents = [student_code, score]
+    else:
+        row_contents = [student_lastname, score]
     append_list_as_row(record_csv, row_contents)
     
 
@@ -159,7 +173,7 @@ def save_results(temp_file, output_dir, student_code, student_lastname, section_
     
     clean_up(temp_file, output_dir, student_code, student_lastname, section_output_dir, output_file, assessment_type, score)
     
-    record_score(section_output_dir, assessment_type, student_code, score, total_items)
+    record_score(section_output_dir, assessment_type, student_code, student_lastname, score, total_items)
     
 
 

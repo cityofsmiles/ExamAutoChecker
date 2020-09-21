@@ -16,7 +16,7 @@ _Note:_ the students' input **SHOULD** look like the following:
 
 Bacolod, Jonathan  (Surname, Firstname. The comma is required.)    
 8-Hubble           (Grade-Section)  
-B1                 (Student code. Use B1, B2, etc. for male students and G1, G2, etc. for female students.) 
+B1                 (Student code. Optional but strongly recommended. Use B1, B2, etc. for male students and G1, G2, etc. for female students.) 
                          
 1. a               (The dot is required. The answers can be any letter, word, or phrase.)  
 2. b   (Don't indent the numbers.) 
@@ -35,7 +35,7 @@ _Note:_ The answer key should be a simple text file that contains only the corre
 Please see the [sample  answer key](https://github.com/cityofsmiles/ExamAutoChecker/blob/master/sample-answer-key.txt). 
 
 ## Installation
-* For Windows, click [here](https://github.com/cityofsmiles/ExamAutoChecker/raw/assets/ExamAutoChecker.exe) to download the executable file. Just double click the file to launch the app.
+* For Windows, click [here](https://github.com/cityofsmiles/ExamAutoChecker/raw/assets/ExamAutoChecker.exe) to download the executable file. Just double click the file to launch the app. Windows will warn you that this file can not be trusted and will discourage you to run it. That is normal. Just click OK to run the program.
 * For Linux, click [here](https://github.com/cityofsmiles/ExamAutoChecker/raw/assets/ExamAutoChecker) to download the executable file. Just double click the file to launch the app.
 * For Android phones with the architecture arm64-v8a, click [here](https://github.com/cityofsmiles/ExamAutoChecker/raw/assets/ExamAutoChecker-0.1-arm64-v8a-debug.apk) to download the apk file. Other architectures will be supported in the future. If you don't know your phone's architecture, you may install the [CPU Info](https://github.com/kamgurgul/cpu-info) app.
 
