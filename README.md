@@ -39,7 +39,12 @@ Please see the [sample  answer key](https://github.com/cityofsmiles/ExamAutoChec
 ## Installation
 * For Windows, click [here](https://github.com/cityofsmiles/ExamAutoChecker/raw/assets/ExamAutoChecker.exe) to download the executable file. Just double click the file to launch the app. Windows will warn you that this file can not be trusted and will discourage you to run it. That is normal. Just click More Info then Run Anyway to run the program.
 * For Linux, click [here](https://github.com/cityofsmiles/ExamAutoChecker/raw/assets/ExamAutoChecker) to download the executable file. Just double click the file to launch the app.
-* For Android phones with the architecture arm64-v8a, click [here](https://github.com/cityofsmiles/ExamAutoChecker/raw/assets/ExamAutoChecker-0.1-arm64-v8a-debug.apk) to download the apk file. Other architectures will be supported in the future. If you don't know your phone's architecture, you may install the [CPU Info](https://github.com/kamgurgul/cpu-info) app.
+* For Android phones, click the link that matches your phone's architecture to download the apk file. If you don't know your phone's architecture, you may install the [CPU Info](https://github.com/kamgurgul/cpu-info) app. 
+	* [arm64-v8a](https://github.com/cityofsmiles/ExamAutoChecker/raw/assets/ExamAutoChecker-0.1-arm64-v8a-debug.apk)
+	* [armeabi-v7a](https://github.com/cityofsmiles/ExamAutoChecker/blob/assets/ExamAutoChecker-0.1-armeabi-v7a-debug.apk)
+	* [x86](https://github.com/cityofsmiles/ExamAutoChecker/blob/assets/ExamAutoChecker-0.1-x86-debug.apk)
+	* [x86_64](https://github.com/cityofsmiles/ExamAutoChecker/blob/assets/ExamAutoChecker-0.1-x86_64-debug.apk)
+
 
 ## How to report issues
 If you see bugs in the app, please [open a new issue](https://github.com/cityofsmiles/ExamAutoChecker/issues). 
